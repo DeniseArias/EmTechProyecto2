@@ -5,7 +5,7 @@ Created on Mon Sep 21 20:38:13 2020
 @author: DELL
 """ 
 import csv
-import Funciones as f
+
 
 with open("synergy_logistics_database.csv","r") as archivo_csv:
     lector=csv.reader(archivo_csv)
@@ -28,15 +28,7 @@ with open("synergy_logistics_database.csv","r") as archivo_csv:
 for rutas in total_rutas:
     rutas.append(rutas[3]/rutas[2])
 total_rutas.sort(key=lambda x: x[3], reverse=True)
-          
-                
-        
-                
-                
-                
-        
-        
-        
+                  
 """
 #Verifcamos la opcion 2 , primeramente sacamos las frecuencias (absoluta y relativa)
 #obtenemos valores y pasamos al excel, posteriormente agregamos un campo mas a las listas de 
@@ -94,7 +86,8 @@ diccionario_viajes=dict(total_Viaje)
             listaIm.append(viajes)
         elif(viajes[1]=="Exports"):
             listaEx.append(viajes)
-
+            
+import Funciones as f
 importaciones=f.rutas_demandadas(listaIm,"Imports")
 exportaciones=f.rutas_demandadas(listaEx,"Exports")
 
